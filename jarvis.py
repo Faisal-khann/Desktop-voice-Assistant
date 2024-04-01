@@ -11,8 +11,7 @@ import requests
 import pywhatkit as kit
 import pyautogui
 import sys
-# import instadownloader
-
+import instadownloader
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
@@ -131,9 +130,27 @@ while True:
         cm = takecommand().lower()
         webbrowser.open(f"{cm}")
         # webbrowser.open("google.com")
-
+    
+    # Open Instagram 
     elif "open instagram" in query:
         webbrowser.open("instagram.com")
+
+    # Check Instagram profile of any account 
+    elif "instagram profile" in query or "profile on instagram" in query:
+        speak("Sir, please enter the username correctly:")
+        name = input( "Enter the username:" )  # Assuming you're running this code in a console
+        webbrowser.open(f"https://www.instagram.com/{name}")
+        speak(f"Sir, here is the profile of the user {name}")
+        time.sleep(5)
+
+        speak("Sir, would you like to download the profile picture of this account?")
+        condition = takecommand().lower()
+        if "yes" in condition:
+            mod = instadownloader.InstaDownloader()
+            mod.download_profile(name, profile_pic_only=True)
+            speak(
+                "I am done, sir. The profile picture is saved in our main folder. Now I am ready for a new command."
+            )
 
     elif "open camera" in query:
         subprocess.run("start microsoft.windows.camera:", shell=True)
@@ -191,7 +208,7 @@ while True:
     #         print(e)
     #         speak("Sorry sir I am not able to send this email") # import smtplib for email
 
-    elif "thank you" in query:
+    elif "thanks buddy" in query:
         speak("You're most welcome sir ")
 
     elif "you can sleep now" in query:
@@ -248,20 +265,4 @@ while True:
             speak("Sorry, I couldn't retrieve the location information at the moment.")
             # Handle the error gracefully without printing
 
-            # speak("wait sir, let me check")
-            # # use the request module to get the public IP address of the machine using the ipify API
-            # ipadd = requests.get("https://api.ipify.org").text
-
-            # # Construct the url for obtaining geographical information based on the Ip address using the geojs.io API
-            # url = "https://get.geojs.io/v1/ip/geo/" + ipadd + ".json"
-
-            # # use 'request to send a GET request to the geojs.io.API and get the geographic information in JSON format
-            # geo = requests.get(url)
-            # geo_data = geo.json()
-
-            # # Extract relevant information from the JSON response
-            # city = geo_data["city"]
-            # country = geo_data["country"]
-            # speak(
-            #     f"sir i am not sure, but i think we are in of {city} city of {country} country"
-            # )    
+    
