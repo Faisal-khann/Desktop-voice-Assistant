@@ -77,7 +77,7 @@ def takecommand():
 #     server.sendmail('faisalkhanfaisal919@gmail.com', to, content)
 #     server.close()
 
-
+# youtube playing function
 def play_on_youtube(video):
     kit.playonyt(video)
 
@@ -130,15 +130,17 @@ while True:
         cm = takecommand().lower()
         webbrowser.open(f"{cm}")
         # webbrowser.open("google.com")
-    
-    # Open Instagram 
+
+    # Open Instagram
     elif "open instagram" in query:
         webbrowser.open("instagram.com")
 
-    # Check Instagram profile of any account 
+    # Check Instagram profile of any account
     elif "instagram profile" in query or "profile on instagram" in query:
         speak("Sir, please enter the username correctly:")
-        name = input( "Enter the username:" )  # Assuming you're running this code in a console
+        name = input(
+            "Enter the username:"
+        )  # Assuming you're running this code in a console
         webbrowser.open(f"https://www.instagram.com/{name}")
         speak(f"Sir, here is the profile of the user {name}")
         time.sleep(5)
@@ -264,5 +266,3 @@ while True:
         except (requests.RequestException, KeyError) as e:
             speak("Sorry, I couldn't retrieve the location information at the moment.")
             # Handle the error gracefully without printing
-
-    
