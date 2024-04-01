@@ -208,45 +208,45 @@ while True:
             os.startfile(os.path.join(music_dir, song[1]))
 
     # ......To find my location using IP Address..................
-    # elif "where i am" in query or "Where we are" in query:
-    #     try:
-    #         speak("Wait sir, let me check.")
+    elif "where i am" in query or "Where we are" in query:
+        try:
+            speak("Wait sir, let me check.")
 
-    #         # Use the request module to get the public IP address of the machine using the ipify API
-    #         ip_address = requests.get("https://api.ipify.org").text
+            # Use the request module to get the public IP address of the machine using the ipify API
+            ip_address = requests.get("https://api.ipify.org").text
 
-    #         # Construct the URL for obtaining geographical information based on the IP address using the geojs.io API
-    #         url = "https://get.geojs.io/v1/ip/geo/" + ip_address + ".json"
+            # Construct the URL for obtaining geographical information based on the IP address using the geojs.io API
+            url = "https://get.geojs.io/v1/ip/geo/" + ip_address + ".json"
 
-    #         # use 'requests' to send a GET request to the geojs.io API and get the geographic information in JSON format
-    #         geo_response = requests.get(url)
-    #         geo_response.raise_for_status()  # Raise an exception for HTTP errors
+            # use 'requests' to send a GET request to the geojs.io API and get the geographic information in JSON format
+            geo_response = requests.get(url)
+            geo_response.raise_for_status()  # Raise an exception for HTTP errors
 
-    #         geo_data = geo_response.json()
-    #         # Extract relevant information from the JSON response
-    #         # state = geo_data["state"]
-    #         city = geo_data["city"]
-    #         country = geo_data["country"]
-    #         district = geo_data.get("region", "unknown")
-    #         village = geo_data.get("district", "unknown")
+            geo_data = geo_response.json()
+            # Extract relevant information from the JSON response
+            # state = geo_data["state"]
+            city = geo_data["city"]
+            country = geo_data["country"]
+            district = geo_data.get("region", "unknown")
+            village = geo_data.get("district", "unknown")
 
-    #         speak(
-    #             f"Sir, I am not sure, but I think we are in {city} city, {district} district of {country} country."
-    #         )
-    #         print(
-    #             f"Sir, I am not sure, but I think we are in {city} city, {district} district of {country} country."
-    #         )
+            speak(
+                f"Sir, I am not sure, but I think we are in {city} city, {district} district of {country} country."
+            )
+            print(
+                f"Sir, I am not sure, but I think we are in {city} city, {district} district of {country} country."
+            )
 
-    #         if village != "unknown":
-    #             speak(f"We are in {village} village.")
-    #             print(f"We are in {village} village.")
-    #         else:
-    #             speak("Sorry, I couldn't retrieve village information.")
-    #             print("Sorry, I couldn't retrieve village information.")
+            if village != "unknown":
+                speak(f"We are in {village} village.")
+                print(f"We are in {village} village.")
+            else:
+                speak("Sorry, I couldn't retrieve village information.")
+                print("Sorry, I couldn't retrieve village information.")
 
-    #     except (requests.RequestException, KeyError) as e:
-    #         speak("Sorry, I couldn't retrieve the location information at the moment.")
-    #         # Handle the error gracefully without printing
+        except (requests.RequestException, KeyError) as e:
+            speak("Sorry, I couldn't retrieve the location information at the moment.")
+            # Handle the error gracefully without printing
 
             # speak("wait sir, let me check")
             # # use the request module to get the public IP address of the machine using the ipify API
