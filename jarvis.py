@@ -195,8 +195,11 @@ while True:
             os.path.join(music_dir, songs[2])
         )  # Assuming you're playing the third song
 
-    elif "pause music" in query:
-        pyautogui.press("space")  # Simulate pressing the spacebar to pause music
+    elif "stop music" in query:
+        pyautogui.press("stop")  # Simulate pressing the spacebar to pause music
+
+    elif "shutdown the music" in query:
+        pyautogui.hotkey("alt", "F4")  # Simulate pressing Alt + F4 to close the current
 
     # elif "switch the window" in query:
     #     try:
