@@ -276,5 +276,5 @@ while True:
 
         except (requests.RequestException, KeyError) as e:
             speak("Sorry, I couldn't retrieve the location information at the moment.")
-            
+            # Handle the error gracefully without printing
     
