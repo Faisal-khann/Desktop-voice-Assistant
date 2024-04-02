@@ -218,7 +218,7 @@ while True:
         sys.exit()
         # speak("sir, do you have any other work")
 
-    # to set alarm
+    # ......To set the alarm.....#
     elif "set alarm" in query:
         al = int(datetime.datetime.now().hour)
         if al == 22:  # check time for alarm
@@ -226,7 +226,7 @@ while True:
             song = os.listdir(music_dir)
             os.startfile(os.path.join(music_dir, song[1]))
     
-    #......To find my Ip Address........
+    #......To find my Ip Address........#
     elif "ip address" in query:
         try:
            speak("Wait sir, let me check.")
@@ -237,7 +237,7 @@ while True:
            speak("Sorry, I couldn't retrieve your IP address at the moment.")
            print("Error:", e)
 
-    # ......To find my location using IP Address..................
+    # ......To find my location using IP Address..........#
     elif "where i am" in query or "Where we are" in query:
         try:
             speak("Wait sir, let me check.")
