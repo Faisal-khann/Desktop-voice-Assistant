@@ -94,7 +94,7 @@ while True:
     # if 1:
     query = takecommand().lower()  # Converting user query into lower case
 
-    # Logic for executing tasks based on query
+    # Logic for executing tasks based on query.....
     if "wikipedia" in query:
         speak("Searching Wikipedia...")
         query = query.replace("wikipedia", "")
@@ -131,11 +131,11 @@ while True:
         webbrowser.open(f"{cm}")
         # webbrowser.open("google.com")
 
-    # Open Instagram
+    #.........Open Instagram.........#
     elif "open instagram" in query:
         webbrowser.open("instagram.com")
 
-    # Check Instagram profile of any account
+    #......Check Instagram profile of any account...........#
     elif "instagram profile" in query or "profile on instagram" in query:
         speak("Sir, please enter the username correctly:")
         name = input(
