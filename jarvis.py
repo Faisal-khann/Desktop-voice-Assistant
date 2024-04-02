@@ -227,7 +227,15 @@ while True:
             os.startfile(os.path.join(music_dir, song[1]))
     
     #......To find my Ip Address........
-    
+    elif "ip address" in query:
+        try:
+           speak("Wait sir, let me check.")
+           ip = requests.get("https://api.ipify.org").text
+           speak(f"Your IP address is {ip}")
+           print("Your IP Address is ", ip)
+        except requests.RequestException as e:
+           speak("Sorry, I couldn't retrieve your IP address at the moment.")
+           print("Error:", e)
 
     # ......To find my location using IP Address..................
     elif "where i am" in query or "Where we are" in query:
