@@ -201,17 +201,7 @@ while True:
     elif "shutdown the music" in query:
         pyautogui.hotkey("alt", "F4")  # Simulate pressing Alt + F4 to close the current
 
-    # elif "switch the window" in query:
-    #     try:
-    #         pyautogui.keyDown("alt")
-    #         pyautogui.press("tab")
-    #         time.sleep(1)
-    #     except Exception as e:
-    #         speak("Sorry, I encountered an error while switching windows.")
-    #         print("Error occurred while switching the window:", e)
-    #     finally:
-    #         pyautogui.keyUp("alt")
-
+    # ......Switch the window section..........#
     elif "switch the window" in query:
         try:
             pyautogui.keyDown("alt")
