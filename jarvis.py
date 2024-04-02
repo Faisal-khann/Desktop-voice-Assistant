@@ -77,11 +77,13 @@ def takecommand():
 #     server.sendmail('faisalkhanfaisal919@gmail.com', to, content)
 #     server.close()
 
+
 # youtube playing function
 def play_on_youtube(video):
     kit.playonyt(video)
 
-# Send Whatsapp message function 
+
+# Send Whatsapp message function
 def send_whatsapp_message(number, message):
     kit.sendwhatmsg_instantly(f"+91{number}", message)
 
@@ -102,7 +104,7 @@ while True:
         speak("According to Wikipedia")
         print(results)
         speak(results)
-        
+
     elif "open youtube" in query:
         speak("sir, what should I search on YouTube")
         video = takecommand().lower()
@@ -124,18 +126,18 @@ while True:
     #     ip = requests.get("https://api.ipify.org").text
     #     speak(f"your Ip address is {ip}")
     #     print("Your Ip Address is ", ip)
-    
+
     elif "open google" in query:
         speak("sir, what should i search on google")
         cm = takecommand().lower()
         webbrowser.open(f"{cm}")
         # webbrowser.open("google.com")
 
-    #.........Open Instagram.........#
+    # .........Open Instagram.........#
     elif "open instagram" in query:
         webbrowser.open("instagram.com")
 
-    #......Check Instagram profile of any account...........#
+    # ......Check Instagram profile of any account...........#
     elif "instagram profile" in query or "profile on instagram" in query:
         speak("Sir, please enter the username correctly:")
         name = input(
@@ -225,17 +227,17 @@ while True:
             music_dir = "C:\\Users\\fais a\\Music"
             song = os.listdir(music_dir)
             os.startfile(os.path.join(music_dir, song[1]))
-    
-    #......To find my Ip Address........#
+
+    # ......To find my Ip Address........#
     elif "ip address" in query:
         try:
-           speak("Wait sir, let me check.")
-           ip = requests.get("https://api.ipify.org").text
-           speak(f"Your IP address is {ip}")
-           print("Your IP Address is ", ip)
+            speak("Wait sir, let me check.")
+            ip = requests.get("https://api.ipify.org").text
+            speak(f"Your IP address is {ip}")
+            print("Your IP Address is ", ip)
         except requests.RequestException as e:
-           speak("Sorry, I couldn't retrieve your IP address at the moment.")
-           print("Error:", e)
+            speak("Sorry, I couldn't retrieve your IP address at the moment.")
+            print("Error:", e)
 
     # ......To find my location using IP Address..........#
     elif "where i am" in query or "Where we are" in query:
@@ -277,4 +279,3 @@ while True:
         except (requests.RequestException, KeyError) as e:
             speak("Sorry, I couldn't retrieve the location information at the moment.")
             # Handle the error gracefully without printing
-    
