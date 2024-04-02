@@ -193,13 +193,7 @@ while True:
         song = os.listdir(music_dir)
         # rd = random.choice(songs)
         os.startfile(os.path.join(music_dir, song[2]))
-
-    # elif "switch the window" in query:
-    #     pyautogui.keyDown("alt")
-    #     pyautogui.press("tab")
-    #     time.sleep(1)
-    #     pyautogui.keyUp("alt")
-
+        
     # elif "switch the window" in query:
     #     try:
     #         pyautogui.keyDown("alt")
