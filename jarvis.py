@@ -194,11 +194,48 @@ while True:
         # rd = random.choice(songs)
         os.startfile(os.path.join(music_dir, song[2]))
 
+    # elif "switch the window" in query:
+    #     pyautogui.keyDown("alt")
+    #     pyautogui.press("tab")
+    #     time.sleep(1)
+    #     pyautogui.keyUp("alt")
+
+    # elif "switch the window" in query:
+    #     try:
+    #         pyautogui.keyDown("alt")
+    #         pyautogui.press("tab")
+    #         time.sleep(1)
+    #     except Exception as e:
+    #         speak("Sorry, I encountered an error while switching windows.")
+    #         print("Error occurred while switching the window:", e)
+    #     finally:
+    #         pyautogui.keyUp("alt")
+
     elif "switch the window" in query:
-        pyautogui.keyDown("alt")
-        pyautogui.press("tab")
-        time.sleep(1)
-        pyautogui.keyUp("alt")
+        try:
+            pyautogui.keyDown("alt")
+            pyautogui.press("tab")
+            time.sleep(1)
+        except Exception as e:
+            speak("Sorry, I encountered an error while switching windows.")
+            print("Error occurred while switching the window:", e)
+        finally:
+            pyautogui.keyUp("alt")
+
+    elif "switch back" in query:
+        try:
+            pyautogui.keyDown("alt")
+            pyautogui.keyDown("shift")
+            pyautogui.press("tab")
+            time.sleep(1)
+        except Exception as e:
+            speak(
+                "Sorry, I encountered an error while switching back to the previous window."
+            )
+            print("Error occurred while switching back to the previous window:", e)
+        finally:
+            pyautogui.keyUp("alt")
+            pyautogui.keyUp("shift")
 
     # elif "email to faisal" in query:
     #     try:
@@ -218,7 +255,6 @@ while True:
     elif "you can sleep now" in query:
         speak("Thanks for using me sir, have a good day ")
         sys.exit()
-
 
     # ......To set the alarm.....#
     elif "set alarm" in query:
