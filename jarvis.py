@@ -278,8 +278,3 @@ while True:
             speak("Sorry, I couldn't retrieve the location information at the moment.")
             # Handle the error gracefully without printing
     
-    elif "how r u" in query:
-        speak("I'm fine, thank you for asking!")
-
-    elif any(greeting in query for greeting in ["hello", "hi", "hey"]):
-        speak("Hello! How can I assist you today?")
