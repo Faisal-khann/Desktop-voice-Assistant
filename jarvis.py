@@ -190,10 +190,14 @@ while True:
 
     elif "play music" in query:
         music_dir = "C:\\Users\\faisa\\Music"
-        song = os.listdir(music_dir)
-        # rd = random.choice(songs)
-        os.startfile(os.path.join(music_dir, song[2]))
-        
+        songs = os.listdir(music_dir)
+        os.startfile(
+            os.path.join(music_dir, songs[2])
+        )  # Assuming you're playing the third song
+
+    elif "pause music" in query:
+        pyautogui.press("space")  # Simulate pressing the spacebar to pause music
+
     # elif "switch the window" in query:
     #     try:
     #         pyautogui.keyDown("alt")
