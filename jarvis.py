@@ -218,7 +218,7 @@ while True:
     elif "you can sleep now" in query:
         speak("Thanks for using me sir, have a good day ")
         sys.exit()
-        
+
 
     # ......To set the alarm.....#
     elif "set alarm" in query:
