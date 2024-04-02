@@ -213,7 +213,7 @@ while True:
     #         speak("Sorry sir I am not able to send this email") # import smtplib for email
 
     elif "thanks buddy" in query:
-        speak("You're most welcome sir ")
+        speak("you're most welcome sir, i am ready for new command")
 
     elif "you can sleep now" in query:
         speak("Thanks for using me sir, have a good day ")
