@@ -102,7 +102,7 @@ while True:
         speak("According to Wikipedia")
         print(results)
         speak(results)
-
+        
     elif "open youtube" in query:
         speak("sir, what should I search on YouTube")
         video = takecommand().lower()
@@ -120,11 +120,11 @@ while True:
         send_whatsapp_message(number, message)
         speak("I've sent the message sir.")
 
-    elif "ip address" in query:
-        ip = requests.get("https://api.ipify.org").text
-        speak(f"your Ip address is {ip}")
-        print("Your Ip Address is ", ip)
-
+    # elif "ip address" in query:
+    #     ip = requests.get("https://api.ipify.org").text
+    #     speak(f"your Ip address is {ip}")
+    #     print("Your Ip Address is ", ip)
+    
     elif "open google" in query:
         speak("sir, what should i search on google")
         cm = takecommand().lower()
@@ -225,6 +225,17 @@ while True:
             music_dir = "C:\\Users\\fais a\\Music"
             song = os.listdir(music_dir)
             os.startfile(os.path.join(music_dir, song[1]))
+    
+    #......To find my Ip Address........
+    elif "ip address" in query:
+        try:
+           speak("Wait sir, let me check.")
+           ip = requests.get("https://api.ipify.org").text
+           speak(f"Your IP address is {ip}")
+           print("Your IP Address is ", ip)
+        except requests.RequestException as e:
+           speak("Sorry, I couldn't retrieve your IP address at the moment.")
+           print("Error:", e)
 
     # ......To find my location using IP Address..................
     elif "where i am" in query or "Where we are" in query:
@@ -266,3 +277,9 @@ while True:
         except (requests.RequestException, KeyError) as e:
             speak("Sorry, I couldn't retrieve the location information at the moment.")
             # Handle the error gracefully without printing
+    
+    elif "how r u" in query:
+        speak("I'm fine, thank you for asking!")
+
+    elif any(greeting in query for greeting in ["hello", "hi", "hey"]):
+        speak("Hello! How can I assist you today?")
