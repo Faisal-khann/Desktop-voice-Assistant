@@ -312,4 +312,3 @@ while True:
 
     elif any(greeting in query for greeting in ["hello", "hi", "hey"]):
         speak("Hello! How can I assist you today?")
-
