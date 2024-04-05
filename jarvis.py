@@ -274,8 +274,12 @@ class MainThread(QThread):
                 self.speak("Okay sir, closing notepad")
                 os.system("taskkill /f /im notepad.exe")
 
-            elif "open command prompt" in self.query:
+            elif "open cmd" in self.query:
                 os.system("start cmd")
+            
+            elif "close cmd" in self.query:
+               self.speak("Okay sir, closing command prompt")
+               os.system("taskkill /f /im cmd.exe")
 
             elif "the current time" in self.query:
                 strTime = datetime.datetime.now().strftime("%I:%M:%S %p")
