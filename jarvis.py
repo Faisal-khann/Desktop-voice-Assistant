@@ -1,47 +1,3 @@
-# class MainThread(QThread):
-#     def __init__(self):
-#         super(MainThread, self).__init__()
-
-#         # Initialize pyttsx3 engine
-#         self.engine = pyttsx3.init("sapi5")
-#         self.voices = self.engine.getProperty("voices")
-#         # print(voices[1].id)
-#         # set id of voices
-#         self.engine.setProperty("voice", self.voices[0].id)
-
-#     def run(self):
-#         self.TaskExecution()
-
-#     # take command function
-#     def takecommand(self):
-#         r = sr.Recognizer()
-#         with sr.Microphone() as source:
-#             print("listening...")
-#             r.pause_threshold = 1
-#             audio = r.listen(source)
-
-#         try:
-#             print("Recognizing...")
-#             query = r.recognize_google(audio, language="en-in")
-#             print(f"user said: {query}")
-
-#         except Exception as e:
-#             self.speak("Say that again please....")
-#             return "none"
-#         return query
-    
-#     # speak function
-#     def speak(self, text):
-#        self.engine.say(text)
-#        self.engine.runAndWait()
-   
-#     # youtube playing function
-#     def play_on_youtube(self, video):
-#         kit.playonyt(video)
-#     # Send Whatsapp message function
-#     def send_whatsapp_message(self, number, message):
-#         kit.sendwhatmsg_instantly(f"+91{number}", message)
-
 #     def TaskExecution(self):
 #         self.wishMe()
 #         while True:
@@ -71,17 +27,6 @@
 #                         "I am done, sir. The profile picture is saved in our main folder. Now I am ready for a new command."
 #                     )
 
-#             elif "open vs code" in self.query:
-#                 codePath = (
-#                     "C:\\Users\\faisa\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-#                 )
-#                 os.startfile(codePath)
-
-#             elif "close vs code" in self.query:
-#                 self.speak("Okay sir, closing vs code")
-#                 os.system("taskkill /f /im Code.exe")
-
-
 #             # ......To set the alarm.....#
 #             elif "set alarm" in self.query:
 #                 al = int(datetime.datetime.now().hour)
@@ -99,6 +44,7 @@ import webbrowser
 import os
 import subprocess
 import requests
+from bs4 import BeautifulSoup # for weather forecasting
 import pywhatkit as kit
 import sys
 import instadownloader
@@ -333,6 +279,14 @@ class MainThread(QThread):
             elif "you can sleep now" in self.query:
                 self.speak("Thanks for using me sir, have a good day.")
                 sys.exit()
+            
+            elif "temperature" in self.query:
+                search = "Temperature in mohali"
+                url = f"https://www.google.com/search?q={search}"
+                r = requests.get(url)
+                data = BeautifulSoup(r.text,"html.parser")
+                temp = data.find("div",class_="BNeawe").text
+                self.speak(f"current {search} is {temp}")
 
 class Main(QMainWindow):
     def __init__(self):
