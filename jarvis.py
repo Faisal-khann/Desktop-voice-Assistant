@@ -1,27 +1,3 @@
-# import time
-# import pyautogui
-# import pyttsx3
-# import datetime
-# import speech_recognition as sr
-# import wikipedia
-# import webbrowser
-# import os
-# import subprocess
-# import requests
-# import pywhatkit as kit
-# import pyautogui
-# import sys
-# import instadownloader
-# from PyQt5.QtCore import QThread
-# from PyQt5 import QtWidgets, QtCore, QtGui
-# from PyQt5.QtCore import QTimer, QTime, QDate, Qt
-# from PyQt5.QtGui import QMovie
-# from PyQt5.QtCore import *
-# from PyQt5.QtGui import *
-# from PyQt5.QtWidgets import *
-# from PyQt5.uic import loadUiType
-# from jarvisUi import Ui_jarvisUi # import the complete class of ui file
-
 # class MainThread(QThread):
 #     def __init__(self):
 #         super(MainThread, self).__init__()
@@ -58,25 +34,7 @@
 #     def speak(self, text):
 #        self.engine.say(text)
 #        self.engine.runAndWait()
-
-#     # wish me function
-#     def wishMe(self):
-#         currTime = datetime.datetime.now().strftime("%I:%M:%S %p") # %I for 12-hour format, %p for AM/PM
-#         hour = int(datetime.datetime.now().hour)
-
-#         if 0 <= hour < 12:
-#             message = f"Good Morning, it's {currTime}"
-#         elif 12 <= hour < 18:
-#             message = f"Good Afternoon, it's {currTime}"
-#         else:
-#             message = f"Good Evening, it's {currTime}"
-
-#         print(message)
-#         self.speak(message)
-
-#         print("I am Jarvis Sir. Please tell me how may I help you.")
-#         self.speak("I am Jarvis Sir. Please tell me how may I help you.")
-    
+   
 #     # youtube playing function
 #     def play_on_youtube(self, video):
 #         kit.playonyt(video)
@@ -89,22 +47,6 @@
 #         while True:
 #             # if 1:
 #             self.query = self.takecommand().lower()  # Converting user query into lower case
-
-#             # Logic for executing tasks based on query.....
-#             if "wikipedia" in self.query:
-#                 self.speak("Searching Wikipedia...")
-#                 self.query = self.query.replace("wikipedia", "")
-#                 results = wikipedia.summary(self.query, sentences=3)
-#                 self.speak("According to Wikipedia")
-#                 print(results)
-#                 self.speak(results)
-
-#             elif "open youtube" in self.query:
-#                 self.speak("sir, what should I search on YouTube")
-#                 video = self.takecommand().lower()
-#                 self.play_on_youtube(video)
-#                 # webbrowser.open(f"{yt}")
-#                 # webbrowser.open("youtube.com")
 
 #             # .........Open Instagram.........#
 #             elif "open instagram" in self.query:
