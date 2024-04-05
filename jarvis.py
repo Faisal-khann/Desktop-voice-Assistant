@@ -375,7 +375,7 @@ class MainThread(QThread):
                     self.speak("Sorry, I couldn't retrieve the location information at the moment.")
                     # Handle the error gracefully without printing
 
-            elif "how r u" in self.query:
+            elif "how are you" in self.query:
                 self.speak("I'm fine sir, what about you!")
             
             elif "i'm good" in self.query:
