@@ -289,11 +289,16 @@ class MainThread(QThread):
                 except (requests.RequestException, KeyError) as e:
                     self.speak("Sorry, I couldn't retrieve the location information at the moment.")
                     # Handle the error gracefully without printing
+                
+            elif "tell me about yourself" in self.query:
+                self.speak("I'm the type of Artificial Intelligence Model whose name is 'JARVIS'..")
+                time.sleep(0.2)
+                self.speak("I'm your virtual friend. How can I help you, sir?")
 
             elif "how are you" in self.query or "how r u" in self.query:
                 self.speak("I'm fine sir, what about you!")
             
-            elif "i'm good" in self.query:
+            elif "i'm good" in self.query or "i am also fine" in self.query or "i am good" in self.query:
                 self.speak("That's great sir, Now i'm ready for new command")
 
             elif any(greeting in self.query for greeting in ["hello", "hi", "hey"]):
