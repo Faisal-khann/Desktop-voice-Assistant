@@ -223,6 +223,14 @@ class MainThread(QThread):
             elif "volume mute" in self.query or "mute" in self.query:
                 pyautogui.press("volumemute")
 
+            # To check the battery percentage of system
+            elif "battery percentage" in self.query:
+                import psutil
+                battery = psutil.sensors_battery()
+                percentage = battery.percent
+                self.speak(f"sir our system have {percentage} percent battery")
+
+
              # ......To find my Ip Address........#
             elif "ip address" in self.query:
                 try:
@@ -275,7 +283,7 @@ class MainThread(QThread):
                     self.speak("Sorry, I couldn't retrieve the location information at the moment.")
                     # Handle the error gracefully without printing
 
-            elif "how are you" in self.query:
+            elif "how are you" in self.query or "how r u" in self.query:
                 self.speak("I'm fine sir, what about you!")
             
             elif "i'm good" in self.query:
