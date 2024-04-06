@@ -238,8 +238,6 @@ class MainThread(QThread):
                 elif percentage <=15:
                     self.speak("we have very low power, please connect to charging the system will shutdown very soon")
 
-
-
              # ......To find my Ip Address........#
             elif "ip address" in self.query:
                 try:
