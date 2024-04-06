@@ -201,19 +201,27 @@ class MainThread(QThread):
                     pyautogui.keyUp("alt")
                     pyautogui.keyUp("shift")
             
-            # Play the music
+            #.......To Play, stop and close the music........#
             elif "play music" in self.query:
                 music_dir = "C:\\Users\\faisa\\Music"
                 songs = os.listdir(music_dir)
-                os.startfile(
-                    os.path.join(music_dir, songs[2])
-                )  # Assuming you're playing the third song
-
+                os.startfile(os.path.join(music_dir, songs[2])) # Assuming you're playing the third song
+                    
             elif "stop music" in self.query:
-                pyautogui.press("stop")  # Simulate pressing the spacebar to pause music
+                pyautogui.press("stop")
 
-            elif "shutdown the music" in self.query:
+            elif "close the music" in self.query:
                 pyautogui.hotkey("alt", "F4")  # Simulate pressing Alt + F4 to close the current
+
+            # ......To control the volume of system......# 
+            elif "volume up" in self.query:
+                pyautogui.press("volumeup")
+
+            elif "volume down" in self.query:
+                pyautogui.press("volumedown")
+            
+            elif "volume mute" in self.query or "mute" in self.query:
+                pyautogui.press("volumemute")
 
              # ......To find my Ip Address........#
             elif "ip address" in self.query:
