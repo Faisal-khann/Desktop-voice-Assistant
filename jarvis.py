@@ -229,6 +229,15 @@ class MainThread(QThread):
                 battery = psutil.sensors_battery()
                 percentage = battery.percent
                 self.speak(f"sir our system have {percentage} percent battery")
+                if percentage >= 75:
+                    self.speak("we have enough power to continue our work")
+                elif percentage >= 45 and percentage <=75:
+                    self.speak("we should connect our system to charging point to charging")
+                elif percentage <= 15 and percentage <=30:
+                    self.speak("we don't have enough power to work, please connect to charging")
+                elif percentage <=15:
+                    self.speak("we have very low power, please connect to charging the system will shutdown very soon")
+
 
 
              # ......To find my Ip Address........#
