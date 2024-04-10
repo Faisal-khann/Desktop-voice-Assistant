@@ -1,6 +1,6 @@
 # Desktop-voice-Assistant (JARVIS)
 
-## Project Description :-
+## Project Description ⬇️
 <p>JARVIS is a desktop voice assistant inspired by the fictional AI assistant of Tony Stark from the Marvel Cinematic Universe.
 This project aims to create a functional voice-controlled assistant that can perform various tasks such as providing information,
 setting reminders, controlling applications, and executing commands based on user input.<br>
@@ -16,7 +16,7 @@ the help of Speech recognition where JARVIS utilizes advanced speech recognition
 5. Entertainment and Media.<br>
 6. Research and Information Retrieval.</p>-->
 
-## Features :-
+## Features ⬇️
 It Can do a lot of cool things, following are the cool features of this application;
 
     1. Greet User.
@@ -33,6 +33,32 @@ It Can do a lot of cool things, following are the cool features of this applicat
     12. Switch the window and return back to the main window.
     13. Take important note in notepad.
     I will add some more cool features in futures.
+
+## Code Section ⬇️
+
+    ├── driver
+    ├── Jarvis              # Main folder for features 
+    │   ├── config          # Contains all secret API Keys
+    │   ├── features        # All functionalities of JARVIS 
+    │   └── utils           # GUI images
+    ├── __init__.py         # Definition of feature's functions
+    ├── gui.ui              # GUI file (in .ui format)
+    ├── main.py             # main driver program of Jarvis
+    ├── requirements.txt    # all dependencies of the program
+
+* The code structure if pretty simple. The code is completely modularized and is highly customizable.<br>
+* To add a new feature:<br>
+       - Make a new file in features folder, write the feature's function you want to include<br>
+       - Add the function's definition to init.py<br>
+       - Add the voice commands through which you want to invoke the function<br>
+
+## Contributions ⬇️
+<p>Contributions are welcome! Feel free to fork this repository, make improvements, and submit pull requests.<br>
+    Together, let's make this voice assistant even more powerful and versatile.</p>
+
+## License ⬇️
+<!--This project is licensed under the MIT License.
+
 
   
     
