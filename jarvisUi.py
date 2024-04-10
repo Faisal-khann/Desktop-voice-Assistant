@@ -92,4 +92,4 @@ if __name__ == "__main__":
     ui = Ui_jarvisUi()
     ui.setupUi(jarvisUi)
     jarvisUi.show()
-    sys.exit(app.exec_())
+    # sys.exit(app.exec_())
