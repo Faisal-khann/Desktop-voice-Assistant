@@ -59,7 +59,8 @@ It Can do a lot of cool things, following are the cool features of this applicat
 ## License ⬇️
 <!--This project is licensed under the MIT License
 2024 Faisal khan-->
-This project is licensed under the [!MIT License, LICENSE]
+This project is licensed under the [MIT License](https://github.com/Faisal-khann/Desktop-voice-Assistant?tab=MIT-1-ov-file)
+2024 Faisal Khan
 
 
   
