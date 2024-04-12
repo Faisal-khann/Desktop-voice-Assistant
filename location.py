@@ -40,4 +40,4 @@ def find_loc():
         return "Error occurred while parsing JSON response. Please try again."
 
 
-find_loc()
+# find_loc()
