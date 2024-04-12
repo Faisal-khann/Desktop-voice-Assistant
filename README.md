@@ -57,8 +57,9 @@ It Can do a lot of cool things, following are the cool features of this applicat
     Together, let's make this voice assistant even more powerful and versatile.</p>
 
 ## License ⬇️
-This project is licensed under the MIT License
-2024 Faisal khan
+<!--This project is licensed under the MIT License
+2024 Faisal khan-->
+This project is licensed under the [!MIT License, LICENSE]
 
 
   
