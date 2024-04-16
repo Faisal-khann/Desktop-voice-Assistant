@@ -314,7 +314,7 @@ class MainThread(QThread):
                 r = requests.get(url)
                 data = BeautifulSoup(r.text,"html.parser")
                 temp = data.find("div",class_="BNeawe").text
-                self.speak(f"current {search} is {temp}")
+                self.speak(f"current {search} is {temp}"
 
 class Main(QMainWindow):
     def __init__(self):
