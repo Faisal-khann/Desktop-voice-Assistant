@@ -10,7 +10,7 @@ This project is built in <strong>Python3</strong>, and the <strong>GUI</strong> 
 the help of Speech recognition where JARVIS utilizes advanced speech recognition technology to understand user commands accurately.</p>
 
 ## Screenshot of GUI Section ⬇️
-<img width="719" alt="JarvisGui" src="https://github.com/Faisal-khann/Desktop-voice-Assistant/assets/119971851/e1c78434-d33e-451a-ba38-6fa8af55b6a0">
+<img width="724" alt="GUI" src="https://github.com/Faisal-khann/Desktop-voice-Assistant/assets/119971851/23b9facc-9387-40b8-8e04-86e3dd761683">
 
 
 
