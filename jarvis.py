@@ -1,39 +1,3 @@
-#     def TaskExecution(self):
-#         self.wishMe()
-#         while True:
-#             # if 1:
-#             self.query = self.takecommand().lower()  # Converting user query into lower case
-
-#             # .........Open Instagram.........#
-#             elif "open instagram" in self.query:
-#                 webbrowser.open("instagram.com")
-
-#             # ......Check Instagram profile of any account...........#
-#             elif "instagram profile" in self.query or "profile on instagram" in self.query:
-#                 self.speak("Sir, please enter the username correctly:")
-#                 name = input(
-#                     "Enter the username:"
-#                 )  # Assuming you're running this code in a console
-#                 webbrowser.open(f"https://www.instagram.com/{name}")
-#                 self.speak(f"Sir, here is the profile of the user {name}")
-#                 time.sleep(5)
-
-#                 self.speak("Sir, would you like to download the profile picture of this account?")
-#                 condition = self.takecommand().lower()
-#                 if "yes" in condition:
-#                     mod = instadownloader.InstaDownloader()
-#                     mod.download_profile(name, profile_pic_only=True)
-#                     self.speak(
-#                         "I am done, sir. The profile picture is saved in our main folder. Now I am ready for a new command."
-#                     )
-
-#             # ......To set the alarm.....#
-#             elif "set alarm" in self.query:
-#                 al = int(datetime.datetime.now().hour)
-#                 if al == 22:  # check time for alarm
-#                     music_dir = "C:\\Users\\fais a\\Music"
-#                     song = os.listdir(music_dir)
-#                     os.startfile(os.path.join(music_dir, song[1]))
 import time
 import pyautogui
 import pyttsx3
@@ -119,6 +83,10 @@ class MainThread(QThread):
     def send_whatsapp_message(self, number, message):
         kit.sendwhatmsg_instantly(f"+91{number}", message)
 
+    def speak_and_listen(self, prompt):
+        self.speak(prompt)
+        return self.takecommand()
+
     def TaskExecution(self):
         self.wishMe()
         while True:
@@ -140,7 +108,8 @@ class MainThread(QThread):
 
             elif "send whatsapp message" in self.query:
                 self.speak("On what number should I send the message sir?")
-                number = input("Enter the number: ")
+                # number = input("Enter the number: ")
+                number = self.speak_and_listen("Enter the number: ")
                 self.speak("What is the message sir?")
                 message = self.takecommand()
                 self.send_whatsapp_message(number, message)
@@ -310,6 +279,30 @@ class MainThread(QThread):
                     )
                     # Handle the error gracefully without printing
 
+            # .........Open Instagram.........#
+            elif "open instagram" in self.query:
+                webbrowser.open("instagram.com")
+
+            # ......Check Instagram profile of any account...........#
+            elif "instagram profile" in self.query:
+                self.speak("Sir, please enter the username correctly:")
+                name = input("Enter the username:")  # Assuming you're running this code in a console
+                webbrowser.open(f"https://www.instagram.com/{name}")
+                self.speak(f"Sir, here is the profile of the user {name}")
+                time.sleep(5)
+
+                self.speak(
+                    "Sir, would you like to download the profile picture of this account?"
+                )
+                condition = self.takecommand().lower()
+                if "yes" in condition:
+                    mod = instadownloader.InstaDownloader()
+                    mod.download_profile(name, profile_pic_only=True)
+                    self.speak(
+                        "I am done, sir. The profile picture is saved in our main folder. Now I am ready for a new command."
+                    )
+
+            # About Jarvis
             elif "tell me about yourself" in self.query:
                 self.speak(
                     "I'm the type of Artificial Intelligence Model whose name is 'JARVIS'.."
@@ -383,4 +376,5 @@ class Main(QMainWindow):
 app = QApplication(sys.argv)
 jarvis = Main()
 jarvis.show()
-exit(app.exec_())
+# exit(app.exec_())
+sys.exit(app.exec_())
