@@ -44,7 +44,7 @@ import webbrowser
 import os
 import subprocess
 import requests
-from bs4 import BeautifulSoup # for weather forecasting
+from bs4 import BeautifulSoup  # for weather forecasting
 import pywhatkit as kit
 import sys
 import instadownloader
@@ -55,6 +55,7 @@ from PyQt5.QtGui import QMovie
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
 from jarvisUi import Ui_jarvisUi  # import the complete class of ui file
+
 
 class MainThread(QThread):
     def __init__(self):
@@ -92,7 +93,9 @@ class MainThread(QThread):
 
     # wish me function
     def wishMe(self):
-        currTime = datetime.datetime.now().strftime("%I:%M:%S %p") # %I for 12-hour format, %p for AM/PM
+        currTime = datetime.datetime.now().strftime(
+            "%I:%M:%S %p"
+        )  # %I for 12-hour format, %p for AM/PM
         hour = int(datetime.datetime.now().hour)
 
         if 0 <= hour < 12:
@@ -107,7 +110,7 @@ class MainThread(QThread):
 
         print("I am Jarvis Sir. Please tell me how may I help you.")
         self.speak("I am Jarvis Sir. Please tell me how may I help you.")
-    
+
     # youtube playing function
     def play_on_youtube(self, video):
         kit.playonyt(video)
@@ -147,7 +150,7 @@ class MainThread(QThread):
                 self.speak("sir, what should i search on google")
                 cm = self.takecommand().lower()
                 webbrowser.open(f"{cm}")
-            
+
             elif "open camera" in self.query:
                 subprocess.run("start microsoft.windows.camera:", shell=True)
 
@@ -164,10 +167,10 @@ class MainThread(QThread):
 
             elif "open cmd" in self.query:
                 os.system("start cmd")
-            
+
             elif "close cmd" in self.query:
-               self.speak("Okay sir, closing command prompt")
-               os.system("taskkill /f /im cmd.exe")
+                self.speak("Okay sir, closing command prompt")
+                os.system("taskkill /f /im cmd.exe")
 
             elif "the current time" in self.query:
                 strTime = datetime.datetime.now().strftime("%I:%M:%S %p")
@@ -196,49 +199,62 @@ class MainThread(QThread):
                     self.speak(
                         "Sorry, I encountered an error while switching back to the previous window."
                     )
-                    print("Error occurred while switching back to the previous window:", e)
+                    print(
+                        "Error occurred while switching back to the previous window:", e
+                    )
                 finally:
                     pyautogui.keyUp("alt")
                     pyautogui.keyUp("shift")
-            
-            #.......To Play, stop and close the music........#
+
+            # .......To Play, stop and close the music........#
             elif "play music" in self.query:
                 music_dir = "C:\\Users\\faisa\\Music"
                 songs = os.listdir(music_dir)
-                os.startfile(os.path.join(music_dir, songs[2])) # Assuming you're playing the third song
-                    
+                os.startfile(
+                    os.path.join(music_dir, songs[2])
+                )  # Assuming you're playing the third song
+
             elif "stop music" in self.query:
                 pyautogui.press("stop")
 
             elif "close the music" in self.query:
-                pyautogui.hotkey("alt", "F4")  # Simulate pressing Alt + F4 to close the current
+                pyautogui.hotkey(
+                    "alt", "F4"
+                )  # Simulate pressing Alt + F4 to close the current
 
-            # ......To control the volume of system......# 
+            # ......To control the volume of system......#
             elif "volume up" in self.query:
                 pyautogui.press("volumeup")
 
             elif "volume down" in self.query:
                 pyautogui.press("volumedown")
-            
+
             elif "volume mute" in self.query or "mute" in self.query:
                 pyautogui.press("volumemute")
 
             # To check the battery percentage of system
             elif "battery percentage" in self.query:
                 import psutil
+
                 battery = psutil.sensors_battery()
                 percentage = battery.percent
                 self.speak(f"sir our system have {percentage} percent battery")
                 if percentage >= 75:
                     self.speak("we have enough power to continue our work")
-                elif percentage >= 45 and percentage <=75:
-                    self.speak("we should connect our system to charging point to charging")
-                elif percentage <= 15 and percentage <=30:
-                    self.speak("we don't have enough power to work, please connect to charging")
-                elif percentage <=15:
-                    self.speak("we have very low power, please connect to charging the system will shutdown very soon")
+                elif percentage >= 45 and percentage <= 75:
+                    self.speak(
+                        "we should connect our system to charging point to charging"
+                    )
+                elif percentage <= 15 and percentage <= 30:
+                    self.speak(
+                        "we don't have enough power to work, please connect to charging"
+                    )
+                elif percentage <= 15:
+                    self.speak(
+                        "we have very low power, please connect to charging the system will shutdown very soon"
+                    )
 
-             # ......To find my Ip Address........#
+            # ......To find my Ip Address........#
             elif "ip address" in self.query:
                 try:
                     self.speak("Wait sir, let me check.")
@@ -246,10 +262,12 @@ class MainThread(QThread):
                     self.speak(f"Your IP address is {ip}")
                     print("Your IP Address is ", ip)
                 except requests.RequestException as e:
-                    self.speak("Sorry, I couldn't retrieve your IP address at the moment.")
+                    self.speak(
+                        "Sorry, I couldn't retrieve your IP address at the moment."
+                    )
                     print("Error:", e)
 
-             # ......To find my location using IP Address..........#
+            # ......To find my location using IP Address..........#
             elif "where i am" in self.query or "Where we are" in self.query:
                 try:
                     self.speak("Wait sir, let me check.")
@@ -287,18 +305,26 @@ class MainThread(QThread):
                         print("Sorry, I couldn't retrieve village information.")
 
                 except (requests.RequestException, KeyError) as e:
-                    self.speak("Sorry, I couldn't retrieve the location information at the moment.")
+                    self.speak(
+                        "Sorry, I couldn't retrieve the location information at the moment."
+                    )
                     # Handle the error gracefully without printing
-                
+
             elif "tell me about yourself" in self.query:
-                self.speak("I'm the type of Artificial Intelligence Model whose name is 'JARVIS'..")
+                self.speak(
+                    "I'm the type of Artificial Intelligence Model whose name is 'JARVIS'.."
+                )
                 time.sleep(0.2)
                 self.speak("I'm your virtual friend. How can I help you, sir?")
 
             elif "how are you" in self.query or "how r u" in self.query:
                 self.speak("I'm fine sir, what about you!")
-            
-            elif "i'm good" in self.query or "i am also fine" in self.query or "i am good" in self.query:
+
+            elif (
+                "i'm good" in self.query
+                or "i am also fine" in self.query
+                or "i am good" in self.query
+            ):
                 self.speak("That's great sir, Now i'm ready for new command")
 
             elif any(greeting in self.query for greeting in ["hello", "hi", "hey"]):
@@ -307,14 +333,15 @@ class MainThread(QThread):
             elif "you can sleep now" in self.query:
                 self.speak("Thanks for using me sir, have a good day.")
                 sys.exit()
-            
+
             elif "temperature" in self.query:
                 search = "Temperature in mohali"
                 url = f"https://www.google.com/search?q={search}"
                 r = requests.get(url)
-                data = BeautifulSoup(r.text,"html.parser")
-                temp = data.find("div",class_="BNeawe").text
+                data = BeautifulSoup(r.text, "html.parser")
+                temp = data.find("div", class_="BNeawe").text
                 self.speak(f"current {search} is {temp}")
+
 
 class Main(QMainWindow):
     def __init__(self):
@@ -334,10 +361,6 @@ class Main(QMainWindow):
         self.ui.label_2.setMovie(self.ui.movie2)
         self.ui.movie2.start()
 
-        self.ui.movie3 = QMovie("../imgg/motion.gif")
-        self.ui.label_3.setMovie(self.ui.movie3)
-        self.ui.movie3.start()
-
         timer = QTimer(self)
         timer.timeout.connect(self.showTime)
         timer.start(1000)
@@ -348,11 +371,14 @@ class Main(QMainWindow):
     def showTime(self):
         current_time = QTime.currentTime()
         current_date = QDate.currentDate()
-        label_time = current_time.toString('hh:mm AP')  # Format for time in 12-hour clock with AM/PM indicator
-        # label_date = current_date.toString(Qt.ISODate)   # Format date as ISO 8601
+        label_time = current_time.toString(
+            "hh:mm:ss AP"
+        )  # Format for time in 12-hour clock with AM/PM indicator
+        label_date = current_date.toString(Qt.ISODate)  # Format date as ISO 8601
 
-        # self.ui.textBrowser.setText(label_date)
+        self.ui.textBrowser.setText(label_date)
         self.ui.textBrowser_2.setText(label_time)
+
 
 app = QApplication(sys.argv)
 jarvis = Main()

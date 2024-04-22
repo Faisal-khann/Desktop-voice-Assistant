@@ -17,10 +17,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>-50</x>
-      <y>0</y>
-      <width>1501</width>
-      <height>931</height>
+      <x>-70</x>
+      <y>-20</y>
+      <width>1521</width>
+      <height>941</height>
      </rect>
     </property>
     <property name="text">
@@ -36,9 +36,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>441</width>
+      <x>0</x>
+      <y>0</y>
+      <width>401</width>
       <height>101</height>
      </rect>
     </property>
@@ -55,10 +55,10 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>780</y>
-      <width>75</width>
-      <height>31</height>
+      <x>990</x>
+      <y>790</y>
+      <width>101</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -73,16 +73,16 @@
      <string notr="true">background-color: rgb(255, 170, 127);</string>
     </property>
     <property name="text">
-     <string>Run</string>
+     <string>R U N</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>780</y>
-      <width>75</width>
-      <height>31</height>
+      <x>1090</x>
+      <y>790</y>
+      <width>101</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -98,70 +98,69 @@
 background-color: rgb(255, 255, 127);</string>
     </property>
     <property name="text">
-     <string>Exit</string>
+     <string>E X I T</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>1140</x>
+      <x>1130</x>
       <y>10</y>
-      <width>141</width>
-      <height>41</height>
+      <width>311</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>12</pointsize>
+      <family>Sitka Subheading Semibold</family>
+      <pointsize>16</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:none;
-background:transparent;
-
+     <string notr="true">background:transparent;
+border:none;
 </string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser_2">
     <property name="geometry">
      <rect>
-      <x>1280</x>
-      <y>10</y>
-      <width>141</width>
-      <height>41</height>
+      <x>1130</x>
+      <y>70</y>
+      <width>311</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>12</pointsize>
+      <family>Sitka Subheading Semibold</family>
+      <pointsize>16</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:none;
-background:transparent;
+     <string notr="true">background:transparent;
+border:none;
 </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>980</x>
-      <y>530</y>
-      <width>341</width>
-      <height>201</height>
+      <x>990</x>
+      <y>500</y>
+      <width>461</width>
+      <height>291</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../imgg/motion.gif</pixmap>
+     <pixmap>../imgg/iron-man-animated-gif.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
