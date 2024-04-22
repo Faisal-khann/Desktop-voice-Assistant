@@ -10,6 +10,7 @@ This project is built in <strong>Python3</strong>, and the <strong>GUI</strong> 
 the help of Speech recognition where JARVIS utilizes advanced speech recognition technology to understand user commands accurately.</p>
 
 ## Screenshot of GUI Section ⬇️
+<img width="719" alt="JarvisGui" src="https://github.com/Faisal-khann/Desktop-voice-Assistant/assets/119971851/e1c78434-d33e-451a-ba38-6fa8af55b6a0">
 
 
 
@@ -54,10 +55,9 @@ It Can do a lot of cool things, following are the cool features of this applicat
     Together, let's make this voice assistant even more powerful and versatile.</p>
 
 ## License ⬇️
-<!--This project is licensed under the MIT License
-2024 Faisal khan-->
 This project is licensed under the [MIT License](https://github.com/Faisal-khann/Desktop-voice-Assistant?tab=MIT-1-ov-file)
 2024 Faisal Khan
+<p>If you like this project don’t forget to 🌟 the repository and Clone this repository, start using jarvis😎.</p>
 
 
   
