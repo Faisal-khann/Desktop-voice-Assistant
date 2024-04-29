@@ -120,6 +120,10 @@ class MainThread(QThread):
                 cm = self.takecommand().lower()
                 webbrowser.open(f"{cm}")
 
+            elif "open wynk music" in self.query:
+                self.speak("Sure, opening Wynk Music.")
+                webbrowser.open("https://wynk.in/music")
+
             elif "open camera" in self.query:
                 subprocess.run("start microsoft.windows.camera:", shell=True)
 
