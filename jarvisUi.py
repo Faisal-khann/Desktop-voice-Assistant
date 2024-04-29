@@ -47,8 +47,10 @@ class Ui_jarvisUi(object):
         font.setBold(True)
         font.setWeight(75)
         self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet("background-color: rgb(255, 170, 127);\n"
-"background-color: rgb(255, 255, 127);")
+        self.pushButton_2.setStyleSheet(
+            "background-color: rgb(255, 170, 127);\n"
+            "background-color: rgb(255, 255, 127);"
+        )
         self.pushButton_2.setObjectName("pushButton_2")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser.setGeometry(QtCore.QRect(1130, 10, 311, 61))
@@ -59,8 +61,8 @@ class Ui_jarvisUi(object):
         font.setWeight(75)
         self.textBrowser.setFont(font)
         self.textBrowser.setStyleSheet(
-  "border-radius:none;\n" "background:transparent;\n" "color:white;"
-  )
+            "border-radius:none;\n" "background:transparent;\n" "color:white;"
+        )
         self.textBrowser.setObjectName("textBrowser")
         self.textBrowser_2 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_2.setGeometry(QtCore.QRect(1130, 70, 311, 71))
@@ -71,8 +73,8 @@ class Ui_jarvisUi(object):
         font.setWeight(75)
         self.textBrowser_2.setFont(font)
         self.textBrowser_2.setStyleSheet(
-  "border-radius:none;\n" "background:transparent;\n" "color:white"
-  )
+            "border-radius:none;\n" "background:transparent;\n" "color:white"
+        )
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(990, 500, 461, 291))
@@ -94,6 +96,7 @@ class Ui_jarvisUi(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     jarvisUi = QtWidgets.QMainWindow()
     ui = Ui_jarvisUi()
