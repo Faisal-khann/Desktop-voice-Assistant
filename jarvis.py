@@ -286,7 +286,9 @@ class MainThread(QThread):
             # ......Check Instagram profile of any account...........#
             elif "instagram profile" in self.query:
                 self.speak("Sir, please enter the username correctly:")
-                name = input("Enter the username:")  # Assuming you're running this code in a console
+                name = input(
+                    "Enter the username:"
+                )  # Assuming you're running this code in a console
                 webbrowser.open(f"https://www.instagram.com/{name}")
                 self.speak(f"Sir, here is the profile of the user {name}")
                 time.sleep(5)
