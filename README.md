@@ -4,7 +4,7 @@
 <p>JARVIS is a desktop voice assistant inspired by the fictional AI assistant of Tony Stark from the Marvel Cinematic Universe.
 This project aims to create a functional voice-controlled assistant that can perform various tasks such as providing information,
 setting reminders, controlling applications, and executing commands based on user input.<br>
-This project is built in <strong>Python3</strong>, and the <strong>GUI</strong> was designed using <strong>QT Designer</strong></p>
+This project is built in <strong>Python3</strong>, and the <strong>GUI</strong> was designed using <strong>QT Designer.</strong></p>
 
 <p>This application can be used by any user to perform operations in the system using voice as an input and this is possible with 
 the help of Speech recognition where JARVIS utilizes advanced speech recognition technology to understand user commands accurately.</p>
