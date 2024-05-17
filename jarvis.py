@@ -18,7 +18,7 @@ from PyQt5.QtCore import QThread
 from PyQt5.QtGui import QMovie
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
-from jarvisUi import Ui_jarvisUi  # import the complete class of ui file
+from jarvisGUI import Ui_MainWindow  # import the complete class of ui file
 
 
 class MainThread(QThread):
@@ -345,18 +345,19 @@ class MainThread(QThread):
 class Main(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_jarvisUi()
+        # self.ui = Ui_jarvisUi()
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.startTask)
         self.ui.pushButton_2.clicked.connect(self.close)
         self.thread = MainThread()  # Create an instance of MainThread
 
     def startTask(self):
-        self.ui.movie1 = QMovie("../imgg/iron.gif.gif")
+        self.ui.movie1 = QMovie("../img/iron.gif.gif")
         self.ui.label.setMovie(self.ui.movie1)
         self.ui.movie1.start()
 
-        self.ui.movie2 = QMovie("../imgg/initial.gif.gif")
+        self.ui.movie2 = QMovie("../img/initial.gif.gif")
         self.ui.label_2.setMovie(self.ui.movie2)
         self.ui.movie2.start()
 
