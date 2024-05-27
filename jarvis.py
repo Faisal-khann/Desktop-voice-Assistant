@@ -101,6 +101,17 @@ class MainThread(QThread):
                 print(results)
                 self.speak(results)
 
+            # About Me
+            elif "tell me about myself" in self.query or "who am I" in self.query:
+                self.speak("Sir, You're name is Faisal khan")
+                time.sleep(0.2)
+                self.speak("You are an intelligent and curious individual, always looking to learn more and achieve great things. How can I assist you today?")
+
+            # elif "tell me about Vanshika" in self.query or "who is Vanshika" in self.query:
+            #     self.speak("Sir, Vanshika is your best friend and she is a very nice girl.")
+            #     time.sleep(0.2)
+            #     self.speak("She is cute as well as very intelligent. How can I assist you today?")
+                
             elif "open youtube" in self.query:
                 self.speak("What should I search on YouTube?")
                 video = self.takecommand()
