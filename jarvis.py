@@ -214,7 +214,6 @@ class MainThread(QThread):
             # To check the battery percentage of system
             elif "battery percentage" in self.query:
                 import psutil
-
                 battery = psutil.sensors_battery()
                 percentage = battery.percent
                 self.speak(f"sir our system have {percentage} percent battery")
@@ -241,9 +240,7 @@ class MainThread(QThread):
                     self.speak(f"Your IP address is {ip}")
                     print("Your IP Address is ", ip)
                 except requests.RequestException as e:
-                    self.speak(
-                        "Sorry, I couldn't retrieve your IP address at the moment."
-                    )
+                    self.speak("Sorry, I couldn't retrieve your IP address at the moment.")
                     print("Error:", e)
 
             # ......To find my location using IP Address..........#
