@@ -232,7 +232,7 @@ class MainThread(QThread):
                         "we have very low power, please connect to charging the system will shutdown very soon"
                     )
 
-            # ......To find my Ip Address........#
+            # ......Find Ip Address........#
             elif "ip address" in self.query:
                 try:
                     self.speak("Wait sir, let me check.")
