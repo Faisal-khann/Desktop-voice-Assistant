@@ -39,8 +39,9 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.textBrowser.setFont(font)
-        self.textBrowser.setStyleSheet("background:transparent;\n"
-"border:none;\n" "color:white;")
+        self.textBrowser.setStyleSheet(
+            "background:transparent;\n" "border:none;\n" "color:white;"
+        )
         self.textBrowser.setObjectName("textBrowser")
         self.textBrowser_2 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_2.setGeometry(QtCore.QRect(1130, 70, 311, 61))
@@ -50,8 +51,9 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.textBrowser_2.setFont(font)
-        self.textBrowser_2.setStyleSheet("background:transparent;\n"
-"border:none;\n" "color:white;")
+        self.textBrowser_2.setStyleSheet(
+            "background:transparent;\n" "border:none;\n" "color:white;"
+        )
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(0, 100, 101, 41))
@@ -87,6 +89,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
