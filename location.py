@@ -1,6 +1,5 @@
 import requests
 
-
 def find_loc():
     try:
         # use the request module to get the public IP address of the machine using the ipify API
@@ -38,6 +37,5 @@ def find_loc():
     except KeyError as e:
         print("KeyError occurred while parsing JSON response:", e)
         return "Error occurred while parsing JSON response. Please try again."
-
 
 # find_loc()
