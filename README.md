@@ -18,7 +18,7 @@ the help of Speech recognition where JARVIS utilizes advanced speech recognition
 It Can do a lot of cool things, following are the cool features of this application;
 
     1. Greet User.
-    2. Tell current time and date.
+    2. Tell us the current time and date.
     3. Launch application/software.
     4. Find Ip Address of the device.
     5. Find location of the user.
@@ -26,8 +26,8 @@ It Can do a lot of cool things, following are the cool features of this applicat
     7. Open YouTube and search according to the user.
     8. Send WhatsApp Messages to anyone.
     9. Control Music system.
-    10. Tells about device battery information.
-    11. Tell about any person(via wikipedia).
+    10. Tell us about device battery information.
+    11. Tell us about any person(via wikipedia).
     12. Switch the window and return back to the main window.
     13. Take important note in notepad.
     I will add some more cool features in futures.
