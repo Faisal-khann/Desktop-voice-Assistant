@@ -156,7 +156,7 @@ class MainThread(QThread):
                 print(f"Sir, the time is {strTime}")
                 self.speak(f"Sir, the time is {strTime}")
 
-            # ......Switch the window section..........#
+            # Switch the window section
             elif "switch the window" in self.query:
                 try:
                     pyautogui.keyDown("alt")
@@ -185,7 +185,7 @@ class MainThread(QThread):
                     pyautogui.keyUp("alt")
                     pyautogui.keyUp("shift")
 
-            # .......To Play, stop and close the music........#
+            # To Play, stop and close the music
             elif "play music" in self.query:
                 music_dir = "C:\\Users\\faisa\\Music"
                 songs = os.listdir(music_dir)
@@ -201,7 +201,7 @@ class MainThread(QThread):
                     "alt", "F4"
                 )  # Simulate pressing Alt + F4 to close the current
 
-            # ......To control the volume of system......#
+            # To control the volume of system
             elif "volume up" in self.query:
                 pyautogui.press("volumeup")
 
@@ -232,7 +232,7 @@ class MainThread(QThread):
                         "we have very low power, please connect to charging the system will shutdown very soon"
                     )
 
-            # ......Find Ip Address........#
+            # Find Ip Address
             elif "ip address" in self.query:
                 try:
                     self.speak("Wait sir, let me check.")
@@ -243,7 +243,7 @@ class MainThread(QThread):
                     self.speak("Sorry, I couldn't retrieve your IP address at the moment.")
                     print("Error:", e)
 
-            # ......To find my location using IP Address..........#
+            # .To find my location using IP Address
             elif "where i am" in self.query or "Where we are" in self.query:
                 try:
                     self.speak("Wait sir, let me check.")
@@ -286,11 +286,11 @@ class MainThread(QThread):
                     )
                     # Handle the error gracefully without printing
 
-            # .........Open Instagram.........#
+            # Open Instagram
             elif "open instagram" in self.query:
                 webbrowser.open("instagram.com")
 
-            # ......Check Instagram profile of any account...........#
+            # Check Instagram profile of any account
             elif "instagram profile" in self.query:
                 self.speak("Sir, please enter the username correctly:")
                 name = input(
