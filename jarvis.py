@@ -125,7 +125,7 @@ class MainThread(QThread):
                 self.speak("sir, what should i search on google")
                 cm = self.takecommand().lower()
                 webbrowser.open(f"{cm}")
-
+  v  g gh 
             elif "open wynk music" in self.query:
                 self.speak("Sure, opening Wynk Music.")
                 webbrowser.open("https://wynk.in/music")
