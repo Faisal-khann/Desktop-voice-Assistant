@@ -156,7 +156,7 @@ class MainThread(QThread):
                 print(f"Sir, the time is {strTime}")
                 self.speak(f"Sir, the time is {strTime}")
 
-  # Switch the window section
+            # ......Switch the window section..........#
             elif "switch the window" in self.query:
                 try:
                     pyautogui.keyDown("alt")
