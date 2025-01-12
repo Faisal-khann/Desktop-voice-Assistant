@@ -386,5 +386,6 @@ class Main(QMainWindow):
 app = QApplication(sys.argv)
 jarvis = Main()
 jarvis.show()
+
 # exit(app.exec_())
 sys.exit(app.exec_())
