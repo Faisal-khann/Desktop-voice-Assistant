@@ -8,10 +8,10 @@ import webbrowser
 import os
 import subprocess
 import requests
-from bs4 import BeautifulSoup  # for weather forecasting
 import pywhatkit as kit
 import sys
 import instadownloader
+# from bs4 import BeautifulSoup  # for weather forecasting
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import QTimer, QTime, QDate, Qt
 from PyQt5.QtCore import QThread
@@ -336,14 +336,7 @@ class MainThread(QThread):
                 self.speak("Thanks for using me sir, have a good day.")
                 sys.exit()
 
-            elif "temperature" in self.query:
-                search = "Temperature in mohali"
-                url = f"https://www.google.com/search?q={search}"
-                r = requests.get(url)
-                data = BeautifulSoup(r.text, "html.parser")
-                temp = data.find("div", class_="BNeawe").text
-                self.speak(f"current {search} is {temp}")
-
+            
 
 class Main(QMainWindow):
     def __init__(self):
