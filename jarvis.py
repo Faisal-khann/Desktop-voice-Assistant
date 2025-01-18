@@ -341,19 +341,25 @@ class MainThread(QThread):
 class Main(QMainWindow):
     def __init__(self):
         super().__init__()
-        # self.ui = Ui_jarvisUi()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.startTask)
         self.ui.pushButton_2.clicked.connect(self.close)
         self.thread = MainThread()  # Create an instance of MainThread
 
+        # Determine base path for resources
+        if getattr(sys, 'frozen', False):  # Running as a bundled .exe
+            self.base_path = sys._MEIPASS
+        else:  # Running in a normal Python environment
+            self.base_path = os.path.dirname(os.path.abspath(__file__))
+
     def startTask(self):
-        self.ui.movie1 = QMovie("../img/iron.gif.gif")
+        # Modify the image paths based on the base path
+        self.ui.movie1 = QMovie(os.path.join(self.base_path, "img", "iron.gif.gif"))
         self.ui.label.setMovie(self.ui.movie1)
         self.ui.movie1.start()
 
-        self.ui.movie2 = QMovie("../img/initial.gif.gif")
+        self.ui.movie2 = QMovie(os.path.join(self.base_path, "img", "initial.gif.gif"))
         self.ui.label_2.setMovie(self.ui.movie2)
         self.ui.movie2.start()
 
