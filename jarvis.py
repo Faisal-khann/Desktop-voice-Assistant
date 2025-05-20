@@ -337,54 +337,104 @@ class MainThread(QThread):
                 sys.exit()
 
             
-
 class Main(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        
         self.ui.pushButton.clicked.connect(self.startTask)
         self.ui.pushButton_2.clicked.connect(self.close)
-        self.thread = MainThread()  # Create an instance of MainThread
+        self.thread = MainThread()
 
-        # Determine base path for resources
-        if getattr(sys, 'frozen', False):  # Running as a bundled .exe
+        # Determine base path
+        if getattr(sys, 'frozen', False):
             self.base_path = sys._MEIPASS
-        else:  # Running in a normal Python environment
+        else:
             self.base_path = os.path.dirname(os.path.abspath(__file__))
 
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.showTime)
+
     def startTask(self):
-        # Modify the image paths based on the base path
-        self.ui.movie1 = QMovie(os.path.join(self.base_path, "img", "iron.gif.gif"))
+        # Load and start GIF animations
+        self.ui.movie1 = QMovie(os.path.join(self.base_path, "gif", "iron.gif.gif"))
         self.ui.label.setMovie(self.ui.movie1)
         self.ui.movie1.start()
 
-        self.ui.movie2 = QMovie(os.path.join(self.base_path, "img", "initial.gif.gif"))
+        self.ui.movie2 = QMovie(os.path.join(self.base_path, "gif", "initial.gif.gif"))
         self.ui.label_2.setMovie(self.ui.movie2)
         self.ui.movie2.start()
 
-        timer = QTimer(self)
-        timer.timeout.connect(self.showTime)
-        timer.start(1000)
+        # Start time display
+        self.timer.start(1000)
 
-        # Start the MainThread when the button is clicked
+        # Start your worker thread
         self.thread.start()
 
     def showTime(self):
         current_time = QTime.currentTime()
         current_date = QDate.currentDate()
-        label_time = current_time.toString(
-            "hh:mm:ss AP"
-        )  # Format for time in 12-hour clock with AM/PM indicator
-        label_date = current_date.toString(Qt.ISODate)  # Format date as ISO 8601
+        label_time = current_time.toString("hh:mm:ss AP")
+        label_date = current_date.toString(Qt.ISODate)
 
         self.ui.textBrowser.setText(label_date)
         self.ui.textBrowser_2.setText(label_time)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    jarvis = Main()
+    jarvis.show()
+    sys.exit(app.exec_())
+    
+# class Main(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.ui = Ui_MainWindow()
+#         self.ui.setupUi(self)
+#         self.ui.pushButton.clicked.connect(self.startTask)
+#         self.ui.pushButton_2.clicked.connect(self.close)
+#         self.thread = MainThread()  # Create an instance of MainThread
+
+#         # Determine base path for resources
+#         if getattr(sys, 'frozen', False):  # Running as a bundled .exe
+#             self.base_path = sys._MEIPASS
+#         else:  # Running in a normal Python environment
+#             self.base_path = os.path.dirname(os.path.abspath(__file__))
+
+#     def startTask(self):
+#         # Modify the image paths based on the base path
+#         self.ui.movie1 = QMovie(os.path.join(self.base_path, "gif", "iron.gif.gif"))
+#         self.ui.label.setMovie(self.ui.movie1)
+#         self.ui.movie1.start()
+
+#         self.ui.movie2 = QMovie(os.path.join(self.base_path, "gif", "initial.gif.gif"))
+#         self.ui.label_2.setMovie(self.ui.movie2)
+#         self.ui.movie2.start()
+
+#         timer = QTimer(self)
+#         timer.timeout.connect(self.showTime)
+#         timer.start(1000)
+
+#         # Start the MainThread when the button is clicked
+#         self.thread.start()
+
+#     def showTime(self):
+#         current_time = QTime.currentTime()
+#         current_date = QDate.currentDate()
+#         label_time = current_time.toString(
+#             "hh:mm:ss AP"
+#         )  # Format for time in 12-hour clock with AM/PM indicator
+#         label_date = current_date.toString(Qt.ISODate)  # Format date as ISO 8601
+
+#         self.ui.textBrowser.setText(label_date)
+#         self.ui.textBrowser_2.setText(label_time)
         
 
-app = QApplication(sys.argv)
-jarvis = Main()
-jarvis.show()
+# app = QApplication(sys.argv)
+# jarvis = Main()
+# jarvis.show()
 
-# exit(app.exec_())
-sys.exit(app.exec_())
+# # exit(app.exec_())
+# sys.exit(app.exec_())
