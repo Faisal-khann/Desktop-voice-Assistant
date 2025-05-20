@@ -20,6 +20,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
 from jarvisGUI import Ui_MainWindow  # import the complete class of ui file
 
+# sys.dont_write_bytecode = True
+
 
 class MainThread(QThread):
     def __init__(self):
