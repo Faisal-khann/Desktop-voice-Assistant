@@ -1,13 +1,20 @@
 # Desktop-voice-Assistant (JARVIS)
 
 ## Project Description ⬇️
-<p>JARVIS is a desktop voice assistant inspired by the fictional AI assistant of Tony Stark from the Marvel Cinematic Universe.
-This project aims to create a functional voice-controlled assistant that can perform various tasks such as providing information,
-setting reminders, controlling applications, and executing commands based on user input.<br>
+<p>JARVIS is an AI-powered desktop voice assistant inspired by the fictional assistant from the Marvel Cinematic Universe. The system is designed to interpret and respond to natural language voice commands, enabling hands-free interaction with desktop applications and services. It seamlessly integrates <strong>speech recognition</strong>, <strong>text-to-speech</strong>, and <strong>automation capabilities</strong> to offer a responsive and intelligent user experience.<br>
 This project is built in <strong>Python3</strong>, and the <strong>GUI</strong> was designed using <strong>QT Designer.</strong></p>
 
 <p>This application can be used by any user to perform operations in the system using voice as an input and this is possible with 
 the help of Speech recognition where JARVIS utilizes advanced speech recognition technology to understand user commands accurately.</p>
+
+
+## Core features
+
+    1. Voice Command Processing: Recognizes and processes real-time user voice input using natural language.
+    2. Task Automation: Executes tasks such as launching applications, retrieving information, setting reminders, and more.
+    3. Interactive GUI: Developed using Qt Designer, providing an intuitive and user-friendly interface.
+    4. System Control: Capable of performing system-level operations like opening files, folders, or managing utilities.
+    5. Information Retrieval: Answers general queries using integrated APIs and logic-driven modules.
 
 ## Screenshot of GUI Section ⬇️
 <img width="721" alt="liveGui" src="https://github.com/Faisal-khann/Desktop-voice-Assistant/assets/119971851/23af3109-c61a-496d-aa67-26dd5df4f853">
