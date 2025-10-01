@@ -1,27 +1,35 @@
-import time
-import pyautogui
-import pyttsx3
-import datetime
-import speech_recognition as sr
-import wikipedia
-import webbrowser
-import os
-import subprocess
-import requests
-import pywhatkit as kit
-import sys
-import instadownloader
-# from bs4 import BeautifulSoup  # for weather forecasting
-from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtCore import QTimer, QTime, QDate, Qt
-from PyQt5.QtCore import QThread
-from PyQt5.QtGui import QMovie
-from PyQt5.QtWidgets import *
-from PyQt5.uic import loadUiType
-from jarvisGUI import Ui_MainWindow  # import the complete class of ui file
+import time                     # Used for handling delays and time-related functions
+import pyautogui                # For GUI automation (keyboard & mouse control)
+import pyttsx3                  # Text-to-speech conversion
+import datetime                 # To handle dates and times
+import speech_recognition as sr # For speech recognition (voice input)
+import wikipedia                # To fetch information from Wikipedia
+import webbrowser               # For opening web pages in the browser
+import os                       # To interact with the operating system
+import subprocess               # To run system-level commands
+import requests                 # To handle HTTP requests (API calls, data fetching)
+import pywhatkit as kit         # For WhatsApp messages, YouTube search, Google search, etc.
+import sys                      # Provides access to system-specific parameters and functions
+import instadownloader          # For downloading Instagram media (images, videos)
+# from bs4 import BeautifulSoup # For web scraping (commented out, maybe used for weather)
+
+# -------------------------
+# PyQt5 (GUI Modules)
+# -------------------------
+
+from PyQt5 import QtWidgets, QtCore, QtGui          # Core PyQt5 widgets and functionalities
+from PyQt5.QtCore import QTimer, QTime, QDate, Qt   # Time, Date, Timer, and Qt constants
+from PyQt5.QtCore import QThread                    # For running background tasks in a thread
+from PyQt5.QtGui import QMovie                      # To handle GIF animations in GUI
+from PyQt5.QtWidgets import *                       # Import all PyQt5 widgets
+from PyQt5.uic import loadUiType                    # Load .ui files created in Qt Designer
+
+# -------------------------
+# GUI File Import
+# -------------------------
+from jarvisGUI import Ui_MainWindow  # Import GUI design (created using Qt Designer)
 
 # sys.dont_write_bytecode = True
-
 
 class MainThread(QThread):
     def __init__(self):
