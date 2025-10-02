@@ -73,17 +73,17 @@ class MainThread(QThread):
         hour = int(datetime.datetime.now().hour)
 
         if 0 <= hour < 12:
-            message = f"Good Morning, it's {currTime}"
+            message = f"Good Morning Mister Faisal khan, it's {currTime}"
         elif 12 <= hour < 18:
-            message = f"Good Afternoon, it's {currTime}"
+            message = f"Good Afternoon Mister Faisal khan, it's {currTime}"
         else:
-            message = f"Good Evening, it's {currTime}"
+            message = f"Good Evening Mister Faisal khan, it's {currTime}"
 
         print(message)
         self.speak(message)
 
-        print("I am Jarvis Sir. Please tell me how may I help you.")
-        self.speak("I am Jarvis Sir. Please tell me how may I help you.")
+        print("I am Jarvis Sir, your virtual friend. Please tell me how may I help you.")
+        self.speak("I am Jarvis Sir, your virtual friend. Please tell me how may I help you.")
 
     # youtube playing function
     def play_on_youtube(self, video):
