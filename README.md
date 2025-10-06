@@ -10,7 +10,7 @@
 2. [Core Features](#core-features)
 3. [GUI Section](#gui-section)
 4. [Features](#features)
-5. [Code Section](#code-section)
+5. [Project Structure](#project-structure)
 6. [Contributions](#contributions)
 7. [License](#license)
 
@@ -62,7 +62,7 @@ https://github.com/user-attachments/assets/a9c6fa45-8772-4e1f-a240-1c80a9a4a730
 
 ---
 
-## Code Section
+## Project Structure
 
     ├── driver
     ├── Jarvis # Main folder for features
