@@ -6,13 +6,13 @@
 
 ## Table of Contents
 
-1. [Project Description](#project-description)
-2. [Core Features](#core-features)
-3. [GUI Section](#gui-section)
-4. [Features](#features)
-5. [Project Structure](#project-structure)
-6. [Contributions](#contributions)
-7. [License](#license)
+- [Project Description](#project-description)
+- [Core Features](#core-features)
+- [GUI Section](#gui-section)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Contributions](#contributions)
+- [License](#license)
 
 ---
 
